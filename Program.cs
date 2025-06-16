@@ -9,6 +9,13 @@ namespace MyProgram
       Console.WriteLine("Hello ! ");
       Console.Write("I am Rajat ");
       Console.WriteLine("Bye");
+      Console.WriteLine("Enter a number to check if its prime or not :");
+      int n = Convert.ToInt32(Console.ReadLine());
+
+      
+      Maths m = new Maths();
+      m.PrimeCheck(n);
+
 
       fact();//calling static function directlt in main function
       MainClass M = new MainClass();//for the not static method of main class
@@ -44,6 +51,37 @@ namespace MyProgram
     }
   }
 
+  class Maths
+  {
+    public void PrimeCheck(int n)
+    {
+      int number = n;
+      bool isPrime = true;
 
-  
+      if (number <= 1)
+      {
+        isPrime = false;
+      }
+      else
+      {
+        for (int i = 2; i <= number / 2; i++)
+        {
+          if (number % i == 0)
+          {
+            isPrime = false;
+            break;
+          }
+        }
+      }
+      if (isPrime)
+      {
+        Console.WriteLine($"{number} is prime");
+      }
+      else
+      {
+        Console.WriteLine($"{number} is not prime");
+      }
+  }
+}
+
 }
