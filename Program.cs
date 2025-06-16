@@ -22,6 +22,8 @@ namespace MyProgram
       M.checkEven();
 
 
+      ReverseString.reverse();//different class static function
+
     }
     public static void fact()
     {
